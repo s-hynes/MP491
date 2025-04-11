@@ -1,4 +1,8 @@
-from quiver import eigen
+"""This is a version of the function that plots direction fields that works for nonlinear ODEs.
+It's a little bit clunky to use because you have to change the variable used manually within the function.
+That could definitely be improved."""
+
+from CH02_quiver import eigen
 import numpy as np
 import matplotlib.pyplot as plt
 
