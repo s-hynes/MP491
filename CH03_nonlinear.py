@@ -18,9 +18,6 @@ def direction_field2(xdot, ydot, xmin=-5, xmax=5, ymin=-5, ymax=5, num_arrows=9)
 
     xx,yy = np.meshgrid(x,y)
 
-    func1 = lambda x,y: y*(13-x**2-y**2)
-    func2 = lambda x,y: 12 - x*(13-x**2-y**2)
-
     x_dot = xdot(xx, yy)
     y_dot = ydot(xx, yy)
 
@@ -45,4 +42,4 @@ def direction_field2(xdot, ydot, xmin=-5, xmax=5, ymin=-5, ymax=5, num_arrows=9)
 
 if __name__=="__main__":
     #direction_field2(xdot=lambda x,y: y*(13-x**2-y**2), ydot=lambda x,y: 12 - x*(13-x**2-y**2), xmin=-7, xmax=7, ymin=-6, ymax=6, num_arrows=20)
-    direction_field2(xdot=lambda x,y: x**2 + y**2, ydot=lambda x,y: y**2, xmin=-7, xmax=7, ymin=-6, ymax=6, num_arrows=20)
+    direction_field2(xdot=lambda x,y: x - y, ydot=lambda x,y: 1 - x*y, xmin=-10, xmax=10, ymin=-10, ymax=10, num_arrows=25)
