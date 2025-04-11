@@ -1,4 +1,3 @@
-# %%
 """This still needs to be able to incorporate taking different fuctions as an argument. It also
 can't deal with half stable points or functions with no fixed points. I also need to adjust the number of
 fixed points that it expects to find manually, which isn't ideal."""
@@ -13,13 +12,20 @@ def stability(f, x0, r_arg, print_stability=False):
     """Determines the stability of a fixed point. Returns +1 for a stable fixed point, -1 for an unstable fixed
     point, and 0 if neither.
 
-    f : A function of x with parameter r
+    Parameters
+    ----------
+    f :     function
+            A function of x with parameter r
 
-    x0 : Fixed point or points to test
+    x0 :    NDArray
+            Fixed point or points to test
     
-    r_arg : inputted parameter r
-    
-    print_stability : If set to "True", prints the stability of the fixed point. Set to "False" by default."""
+    r_arg : float
+            inputted parameter r
+
+    print_stability :   bool
+                        If set to "True", prints the stability of the fixed point. Set to "False" by default.
+    """
 
     x, r = sympy.symbols('x r')
 
@@ -82,10 +88,6 @@ def bifurc(f, fstring, rmin=-5, rmax=5, rstep=0.01):
             #print(eq_points[0,:,i])
         
     print("Number of points that stability function thinks aren't roots = {0}".format(not_root))
-
-        # Basically, I want to have a condition here that tests whether or not the fixed point is stable or
-        # unstable. I'm thinking that it would rely on differentiating f, then evaluating it at the equilibrium point.
-        # If f'(x)>0, the equilibrium point is unstable, and if f'(x)<0 it's unstable.
 
     return eq_points, r_arr
 
