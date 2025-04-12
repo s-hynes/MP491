@@ -27,3 +27,7 @@ There are two Jupyter notebooks that make use of this:
 There is no code for this chapter at the minute.
 
 ## Chapter 5: 1D Maps
+
+The code for Chapter 5 will make plots of $x_n$ against $n$ for 1D maps and it will determine if a map tends towards a fixed point after a certain number of iterations, for a given initial value $x_0$.
+
+There's no code here for making cobweb plots, but there are a few different places that will do this online. This thing is fairly easy to use: https://mathinsight.org/applet/function_iteration_cobweb.
