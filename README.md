@@ -2,6 +2,13 @@
 
 I've written some Python code that can (hopefully) help with checking answers to some of the Nonlinear Systems exam and tutorial questions. The useful functions themselves are written in Python scripts (.py), then the functions are used in Jupyter notebooks (.ipynb) to answer questions. The files all have the prefix "CHXX_" to indicate what chapter of the course they belong to.
 
+**Links to specific parts of this README:**</br>
+[Chapter 1: 1D ODEs](#chapter-1-1d-odes) </br>
+[Chapter 2: 2D Linear ODEs](#chapter-2-2d-linear-odes) </br>
+[Chapter 3: 2D Nonlinear ODEs](#chapter-3-2d-nonlinear-odes) </br>
+[Chapter 4: Limit Cycles](#chapter-4-limit-cycles) </br>
+[Chapter 5: 1D Maps](#chapter-5-1d-maps)
+
 ## Chapter 1: 1D ODEs
 
 The main file here is `CH01_bifurcation.py`. It contains three functions, `stability`, `bifurc`, and `plotter`. `plotter` can be used to plot a bifurcation diagram for an inputted 1D ODE.
