@@ -34,7 +34,7 @@ def direction_field2(xdot, ydot, xmin=-5, xmax=5, ymin=-5, ymax=5, num_arrows=9)
                 ax.plot( np.real(eigenvectors[i,0])*man, np.real(eigenvectors[i,1])*man, 'g--', label='Stable manifold')
             ax.legend()
     """
-    ax1.grid()
+    ax1.grid(alpha=1/2)
     ax1.set_xlim(xmin, xmax)
     ax1.set_ylim(ymin, ymax)
     plt.show()
@@ -60,12 +60,12 @@ def stream(xdot, ydot, xmin=-5, xmax=5, ymin=-5, ymax=5, num_points=100, eq_pts=
 
     plt.streamplot(xx, yy, x_dot, y_dot, density=1)
     try:
-        plt.plot(eq_pts[:,0], eq_pts[:,1], 'ko')
+        plt.plot(eq_pts[:,0], eq_pts[:,1], c='grey', linestyle='', marker='o')
     except:
         pass
 
     plt.axis("equal")
-    plt.grid()
+    plt.grid(alpha=1/2)
     plt.show()
 
 if __name__=="__main__":
