@@ -78,7 +78,7 @@ def direction_field(a,b,c,d, xmin=-5, xmax=5, ymin=-5, ymax=5, num_arrows=9):
     ax.set_ylim(ymin, ymax)
     plt.show()
 
-def stream_lin(a,b,c,d, xmin=-5, xmax=5, ymin=-5, ymax=5, num_points=101, eq_pts=[], density=1.5):
+def stream_lin(a,b,c,d, xmin=-5, xmax=5, ymin=-5, ymax=5, num_points=101, eq_pts=[], density=1.5, manifold=True):
 
     eq_pts = np.array(eq_pts)
 
@@ -106,12 +106,19 @@ def stream_lin(a,b,c,d, xmin=-5, xmax=5, ymin=-5, ymax=5, num_points=101, eq_pts
 
     plt.streamplot(xx, yy, x_dot, y_dot, density=density)
 
-    for i in range(2):
-        if np.isreal(eigenvalues[i]):
-            if eigenvalues[i] > 0:
-                plt.plot( np.real(eigenvectors[i,0])*man, np.real(eigenvectors[i,1])*man, c='r', ls='--', alpha=1/2, lw=1.5, label='Unstable manifold')
-            elif eigenvalues[i] < 0:
-                plt.plot( np.real(eigenvectors[i,0])*man, np.real(eigenvectors[i,1])*man, c='g', ls='--', alpha=1/2, lw=1.5, label='Stable manifold')
+    if manifold==True:
+        for i in range(2):
+            if np.isreal(eigenvalues[i]):
+                if eigenvalues[i] > 0:
+                    plt.plot( np.real(eigenvectors[i,0])*man, np.real(eigenvectors[i,1])*man, c='r', ls='--', alpha=1/2, lw=1.5, label='Unstable manifold')
+                elif eigenvalues[i] < 0:
+                    plt.plot( np.real(eigenvectors[i,0])*man, np.real(eigenvectors[i,1])*man, c='g', ls='--', alpha=1/2, lw=1.5, label='Stable manifold')
+
+        warnings.filterwarnings("ignore", ".*artist.*")
+        try: 
+            plt.legend()
+        except:
+            pass
 
     for k in range(x.size):
         for l in range(y.size):
@@ -120,11 +127,6 @@ def stream_lin(a,b,c,d, xmin=-5, xmax=5, ymin=-5, ymax=5, num_points=101, eq_pts
                 #print("Fixed point at ({0}, {1})".format(x[l], y[k]))
                 plt.plot(x[l], y[k], c='grey', linestyle='', marker='o')    
 
-    warnings.filterwarnings("ignore", ".*artist.*")
-    try: 
-        plt.legend()
-    except:
-        pass
     plt.grid(alpha=1/2)
     plt.xlim(xmin, xmax)
     plt.ylim(ymin, ymax)
