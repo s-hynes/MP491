@@ -57,9 +57,9 @@ def direction_field(a,b,c,d, xmin=-5, xmax=5, ymin=-5, ymax=5, num_arrows=9):
     for i in range(2):
         if np.isreal(eigenvalues[i]):
             if eigenvalues[i] > 0:
-                ax.plot( np.real(eigenvectors[i,0])*man, np.real(eigenvectors[i,1])*man, 'r--', label='Unstable manifold')
+                ax.plot( np.real(eigenvectors[i,0])*man, np.real(eigenvectors[i,1])*man, 'r--', label='Unstable manifold \u03BB = {0}'.format(eigenvalues[i]))
             elif eigenvalues[i] < 0:
-                ax.plot( np.real(eigenvectors[i,0])*man, np.real(eigenvectors[i,1])*man, 'g--', label='Stable manifold')
+                ax.plot( np.real(eigenvectors[i,0])*man, np.real(eigenvectors[i,1])*man, 'g--', label='Stable manifold \u03BB = {0}'.format(eigenvalues[i]))
 
     #else:
     #    ax.plot( np.real(eigenvectors[i,0])*man, np.real(eigenvectors[i,1])*man)
@@ -110,9 +110,9 @@ def stream_lin(a,b,c,d, xmin=-5, xmax=5, ymin=-5, ymax=5, num_points=101, eq_pts
         for i in range(2):
             if np.isreal(eigenvalues[i]):
                 if eigenvalues[i] > 0:
-                    plt.plot( np.real(eigenvectors[i,0])*man, np.real(eigenvectors[i,1])*man, c='r', ls='--', alpha=1/2, lw=1.5, label='Unstable manifold')
+                    plt.plot( np.real(eigenvectors[i,0])*man, np.real(eigenvectors[i,1])*man, c='r', ls='--', alpha=1/2, lw=1.5, label='Unstable manifold \u03BB = {0}'.format(eigenvalues[i]))
                 elif eigenvalues[i] < 0:
-                    plt.plot( np.real(eigenvectors[i,0])*man, np.real(eigenvectors[i,1])*man, c='g', ls='--', alpha=1/2, lw=1.5, label='Stable manifold')
+                    plt.plot( np.real(eigenvectors[i,0])*man, np.real(eigenvectors[i,1])*man, c='g', ls='--', alpha=1/2, lw=1.5, label='Stable manifold \u03BB = {0}'.format(eigenvalues[i]))
 
         warnings.filterwarnings("ignore", ".*artist.*")
         try: 
