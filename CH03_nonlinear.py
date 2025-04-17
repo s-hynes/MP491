@@ -40,7 +40,7 @@ def direction_field2(xdot, ydot, xmin=-5, xmax=5, ymin=-5, ymax=5, num_arrows=9)
     plt.show()
 
 
-def stream(xdot, ydot, xmin=-5, xmax=5, ymin=-5, ymax=5, num_points=100, eq_pts=[]):
+def stream(xdot, ydot, xmin=-5, xmax=5, ymin=-5, ymax=5, num_points=100, eq_pts=[], density=1):
 
     eq_pts = np.array(eq_pts)
 
@@ -52,15 +52,11 @@ def stream(xdot, ydot, xmin=-5, xmax=5, ymin=-5, ymax=5, num_points=100, eq_pts=
     x_dot = xdot(xx, yy)
     y_dot = ydot(xx, yy)
 
-    #x_eq = np.empty_like(x_dot)
-    #y_eq = np.empty_like(y_dot)
+    fig = plt.figure(figsize=(6.5,6.5))
 
-    fig = plt.figure(figsize=(10,10))
-
-
-    plt.streamplot(xx, yy, x_dot, y_dot, density=1)
+    plt.streamplot(xx, yy, x_dot, y_dot, density=density)
     try:
-        plt.plot(eq_pts[:,0], eq_pts[:,1], c='grey', linestyle='', marker='o')
+        plt.plot(eq_pts[:,0], eq_pts[:,1], c='grey', linestyle='', marker='o', markersize=5)
     except:
         pass
 
