@@ -20,11 +20,15 @@ There are two Jupyter notebooks that make use of this:
 
 ## Chapter 2: 2D Linear ODEs
 
+The code for chapter 2 will plot phase portraits and direction fields for systems of 2D linear ODEs. It will also calculate the eigenvalues and eigenvectors of the system, i.e. the eigenvalues and eigenvectors of the matrix $\mathbf{A}$ in the matrix representation of the system, $\mathbf{\dot x} = \mathbf{Ax}$.
+
 ## Chapter 3: 2D Nonlinear ODEs
+
+The code for chapter 3 will draw phase portraits for systems of 2D nonlinear ODEs.
 
 ## Chapter 4: Limit Cycles
 
-There is no code for this chapter at the minute.
+The code for Chapter 4 will draw phase portraits for limit cycle questions.
 
 ## Chapter 5: 1D Maps
 
